@@ -10,7 +10,11 @@
 var person = {
     name: "Colin",
     age: 26,
-    hobbies: ["Running", "Guitar", "Reading"]
+    hobbies: ["Running", "Guitar", "Reading", "Coding"],
+    //   tuple comes in handy for cases such as role as seen below, what if we only want an id and a role but we try to
+    //  change the value of role to a number? With tuple we can declare that this array will
+    // always have a length of 2 with a number and string
+    role: [2, "Musician"]
 };
 // this type value tells typescript that this variable will be an array of strings.
 // If you want the array to have any value use any[] <-- use sparingly
@@ -20,3 +24,16 @@ for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
     var hobby = _a[_i];
     console.log(hobby.toUpperCase());
 }
+// Creating new object to use for enum example
+var Role;
+(function (Role) {
+    Role[Role["ADMIN"] = 0] = "ADMIN";
+    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
+    Role[Role["AUTHOR"] = 2] = "AUTHOR";
+})(Role || (Role = {}));
+var personTwo = {
+    name: "Paul",
+    age: 29,
+    hobbies: ["Video Games", "Sonic", "Disney"],
+    role: Role.ADMIN
+};

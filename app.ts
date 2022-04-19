@@ -33,3 +33,21 @@ console.log(person.name);
 for (const hobby of person.hobbies) {
   console.log(hobby.toUpperCase());
 }
+
+// Creating new object to use for enum example
+
+// the enum below will assign ADMIN = 1, READ_ONLY = 2, AUTHOR = 3
+// (See the js version of this code to see the perks of using enum)
+
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
+}
+
+const personTwo = {
+  name: "Paul",
+  age: 29,
+  hobbies: ["Video Games", "Sonic", "Disney"],
+  role: Role.ADMIN,
+};

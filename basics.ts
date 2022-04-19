@@ -9,6 +9,7 @@ console.log("Hello TypeScript");
 
 // Types added by typescript
 // Tuple - [1,2] fixed length and type array
+// Enum - enum {NEW, OLD}
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
