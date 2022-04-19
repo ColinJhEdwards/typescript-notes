@@ -5,6 +5,10 @@ console.log("Hello TypeScript");
 // String - can be defined with single quotes, double quotes, or back ticks. Simply text.
 // Boolean - true/false
 // Object - {name: colin, age: 26}
+// Arrays - [1 , 2 , 3]
+
+// Types added by typescript
+// Tuple - [1,2] fixed length and type array
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
