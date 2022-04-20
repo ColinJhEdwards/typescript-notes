@@ -1,39 +1,18 @@
-// When creating an object the type can be given a value of {} where you can insert the expected values and their types
-// const person: {
-//     name: string;
-//     age: number;
-//   } = {
-//     name: "Colin",
-//     age: 26,
-//   };
-// However it is better to let typescript infer this on its own.
-var person = {
-    name: "Colin",
-    age: 26,
-    hobbies: ["Running", "Guitar", "Reading", "Coding"],
-    //   tuple comes in handy for cases such as role as seen below, what if we only want an id and a role but we try to
-    //  change the value of role to a number? With tuple we can declare that this array will
-    // always have a length of 2 with a number and string
-    role: [2, "Musician"]
-};
-// this type value tells typescript that this variable will be an array of strings.
-// If you want the array to have any value use any[] <-- use sparingly
-var favoriteActivities = ["Swimming", "Playing Music"];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+// instead of giving input1 and input2 a type of "any" we can give them a union type to specify the input can be
+// either a number or string
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-// Creating new object to use for enum example
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-var personTwo = {
-    name: "Paul",
-    age: 29,
-    hobbies: ["Video Games", "Sonic", "Disney"],
-    role: Role.ADMIN
-};
+// instead of giving input1 and input2 a type of any we can give them a union type to speficy the input can be
+// either a number or string
+var combinedAges = combine(30, 26);
+console.log(combinedAges);
+var combinedNames = combine("max", "anna");
+console.log(combinedNames);
