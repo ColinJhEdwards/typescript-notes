@@ -11,7 +11,7 @@ console.log("Hello TypeScript");
 // Tuple - [1,2] fixed length and type array
 // Enum - enum {NEW, OLD}
 // Union - string | number, allows you to specify two types if needed
-// Literal -
+// Literal - similar to union but can specify what values have to be - Ex. Time: "AM" | "PM"
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
