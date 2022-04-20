@@ -1,19 +1,34 @@
-// instead of giving input1 and input2 a type of "any" we can give them a union type to specify the input can be
-// either a number or string
-function combine(input1: number | string, input2: number | string) {
+function combine(
+  // instead of giving input1 and input2 a type of "any" we can give them a union type to specify the input can be
+  // either a number or string
+  input1: number | string,
+  input2: number | string,
+  // literal types are similar to union types as seen in "resultType" however here we are saying the value
+  // will be a string, but only the string values listed(as-number/as-text)
+  // this is useful because when assigning a value to resultType, if we ever mispell the value ts will return an error
+  resultType: "as-number" | "as-text"
+) {
   let result;
-  if (typeof input1 === "number" && typeof input2 === "number") {
-    result = input1 + input2;
+  if (
+    (typeof input1 === "number" && typeof input2 === "number") ||
+    resultType === "as-number"
+  ) {
+    result = +input1 + +input2;
   } else {
     result = input1.toString() + input2.toString();
   }
-  return result;
+  //   if (resultType === "as-number") {
+  //     return +result;
+  //   } else {
+  //     return result.toString();
+  //   }
 }
 
-// instead of giving input1 and input2 a type of any we can give them a union type to speficy the input can be
-// either a number or string
-const combinedAges = combine(30, 26);
+const combinedAges = combine(30, 26, "as-number");
 console.log(combinedAges);
 
-const combinedNames = combine("max", "anna");
+const combinedStringAges = combine("20", "25", "as-number");
+console.log(combinedStringAges);
+
+const combinedNames = combine("max", "anna", "as-text");
 console.log(combinedNames);

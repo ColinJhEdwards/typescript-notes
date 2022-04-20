@@ -10,7 +10,8 @@ console.log("Hello TypeScript");
 // Types added by typescript
 // Tuple - [1,2] fixed length and type array
 // Enum - enum {NEW, OLD}
-//  Union
+// Union - string | number, allows you to specify two types if needed
+// Literal -
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
