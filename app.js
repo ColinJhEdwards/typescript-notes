@@ -1,21 +1,15 @@
-// functions have types, notice when hovering over this function ts infers that a number will be returned
-function add(n1, n2) {
-    return n1 + n2;
+//  unknow can be used for when we dont know what the user inputs will be, could be a number could be a string
+var userInput;
+var userName;
+// string and number, but no error
+userInput = 5;
+userInput = "max";
+// notice that userName is given the type of string therefor it cannot be given the value of userInput
+// However if we use the type "any" this is fixed
+if (typeof userInput === "string") {
+    userName = userInput;
 }
-// void type, this functions doesnt return anything
-function printResult(num) {
-    console.log("Result: ".concat(num));
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
-    cb(result);
-}
-// Function can be used as a type, here we use arrow function syntax and show that the function should return a number
-// we also specify that the parameters must exist and be numbers
-var combineValues;
-combineValues = add;
-console.log(combineValues(8, 8));
-printResult(add(5, 12));
-addAndHandle(10, 20, function (result) {
-    console.log(result);
-});
+generateError("we got an error", 500);

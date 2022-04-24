@@ -10,3 +10,10 @@ userInput = "max";
 if (typeof userInput === "string") {
   userName = userInput;
 }
+
+// function is never returning a return value, similar to void, just more clear
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+}
+
+generateError("we got an error", 500);

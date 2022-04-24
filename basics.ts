@@ -12,7 +12,8 @@ console.log("Hello TypeScript");
 // Enum - enum {NEW, OLD}
 // Union - string | number, allows you to specify two types if needed
 // Literal - similar to union but can specify what values have to be - Ex. Time: "AM" | "PM"
-// Unknown -
+// Unknown - Used when we are unsure what a given variable may be, could be from a user input etc.. use sparingyly
+// Never - useful for when a function for example will never return a value
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
