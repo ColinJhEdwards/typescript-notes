@@ -1,11 +1,12 @@
-// functions have types, notice when hovering over this function ts infers that a number will be returned
-function add(n1: number, n2: number) {
-  return n1 + n2;
-}
+//  unknow can be used for when we dont know what the user inputs will be, could be a number could be a string
+let userInput: unknown;
+let userName: string;
 
-// void type, this functions doesnt return anything
-function printResult(num: number): void {
-  console.log(`Result: ${num}`);
+// string and number, but no error
+userInput = 5;
+userInput = "max";
+// notice that userName is given the type of string therefor it cannot be given the value of userInput
+// However if we use the type "any" this is fixed
+if (typeof userInput === "string") {
+  userName = userInput;
 }
-
-printResult(add(5, 12));

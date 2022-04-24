@@ -12,6 +12,7 @@ console.log("Hello TypeScript");
 // Enum - enum {NEW, OLD}
 // Union - string | number, allows you to specify two types if needed
 // Literal - similar to union but can specify what values have to be - Ex. Time: "AM" | "PM"
+// Unknown -
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
