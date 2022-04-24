@@ -15,6 +15,9 @@ console.log("Hello TypeScript");
 // Unknown - Used when we are unsure what a given variable may be, could be from a user input etc.. use sparingyly
 // Never - useful for when a function for example will never return a value
 
+// compoling files
+// tsc "filename" will compile the entered file name, not very useful for larger projects though
+
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
   if (showResult) {
