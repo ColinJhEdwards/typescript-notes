@@ -21,7 +21,7 @@ console.log("Hello TypeScript");
 // instead we can run "tsc app.ts --w" or "tsc app.ts -w" this will automatically recompile the file when saved with changes.
 // But again this ^ is only for the individual files, not very helpful on larger projects
 // When working with larger projects we can run "tsc --init" which will tell typescript this project is a typescript project, compile any ts file when they are updated.
-// this will create a tsconfig file then you just can "tsc" to compile all file, which can be combined with watch mode(tsc -w / tsc --watch)
+// this will create a tsconfig file then you just can run "tsc" to compile all files, which can be combined with watch mode(tsc -w / tsc --watch)
 
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   const result = n1 + n2;
